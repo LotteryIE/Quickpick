@@ -1,0 +1,31 @@
+.line {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    border: 1px solid #eeeeee;
+    height: 2.25rem;
+    width: 19.25rem;
+    padding: 0.25rem;
+    align-items: center;
+    justify-content: left;
+}
+
+.ball {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cccccc;
+    border-radius: 1rem;
+    color: #000;
+}
+
+.ball:hover {
+    background: #bbb;
+    transition: background 0.3s ease;
+}
+
+.ball.selected {
+    background: #aaa;    
+}
