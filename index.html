@@ -26,27 +26,42 @@
                     <div class="ball selected">33</div>
                 </div>
             </div>
-            <button onclick="addline()" style="margin-top: 0.5rem;" class="">add a line</button>
+            <button onclick="addline2()" style="margin-top: 0.5rem;" class="">add a line</button>
         </section>
 
         <script>
             function test() {
                 console.log('run');
             }
-            function addline() {
+            function addline2() {
+                // generate array of available numbersß
+                let numArray = [];
+                for (i = 0; i < 40; i++) {
+                    numArray[i] = i+1;
+                }
+                // new line
                 const numballs = 6;
                 let lines = document.getElementById('lines');
                 let newLine = document.createElement('div');
                 newLine.classList.add('line');
                 lines.appendChild(newLine);
+                // create balls
                 for (i = 0; i < numballs; i++) {;
                     let newBall = document.createElement('div');
                     newBall.classList.add('ball');
-                    let num = ballGen();
+                    console.log(numArray.length);
+                    let pos = Math.floor(Math.random()*numArray.length);
+                    let num = numArray[pos];
                     newBall.innerHTML = "";
                     newBall.textContent = num;
                     newLine.appendChild(newBall);
+                    numArray.splice(pos, 1); //remove used ball from array
                 }
+                // add edit button
+                // let editButton = document.createElement('p');
+                // editButton.innerHTML = "";
+                // editButton.textContent = "test";
+                // newline.appendChild(editButton);
             }
             function ballGen() {
                 let num = Math.floor(Math.random()*40);
