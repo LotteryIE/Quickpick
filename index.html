@@ -17,16 +17,42 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <section class="lines">
+        <section class="playslip">
             <h3>Choose your numbers</h3>
-            <p> testing a change    </p>
-            <div class="line">
-                <div class="ball">33</div>
-                <div class="ball selected">33</div>
+            <p> testing a change</p>
+            <div id="lines">
+                <div class="line">
+                    <div class="ball">33</div>
+                    <div class="ball selected">33</div>
+                </div>
             </div>
-            <button style="margin-top: 0.5rem;" class="addLine">add a line</button>
+            <button onclick="addline()" style="margin-top: 0.5rem;" class="">add a line</button>
         </section>
 
-        <script src="" async defer></script>
+        <script>
+            function test() {
+                console.log('run');
+            }
+            function addline() {
+                const numballs = 6;
+                let lines = document.getElementById('lines');
+                let newLine = document.createElement('div');
+                newLine.classList.add('line');
+                lines.appendChild(newLine);
+                for (i = 0; i < numballs; i++) {;
+                    let newBall = document.createElement('div');
+                    newBall.classList.add('ball');
+                    let num = ballGen();
+                    newBall.innerHTML = "";
+                    newBall.textContent = num;
+                    newLine.appendChild(newBall);
+                    console.log(num);
+                }
+            }
+            function ballGen() {
+                let num = Math.floor(Math.random()*40);
+                return num;
+            }
+        </script>
     </body>
 </html>
