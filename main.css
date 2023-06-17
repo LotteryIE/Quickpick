@@ -1,3 +1,7 @@
+body {
+    font-family: proxima-nova, sans-serif;ß
+}
+
 .line {
     display: flex;
     flex-direction: row;
@@ -28,4 +32,9 @@
 
 .ball.selected {
     background: #aaa;    
+}
+
+/* target classes */
+.t-edit {
+
 }
