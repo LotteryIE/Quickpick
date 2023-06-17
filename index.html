@@ -44,12 +44,10 @@
                 let lines = document.getElementById('lines');
                 let newLine = document.createElement('div');
                 newLine.classList.add('line');
-                lines.appendChild(newLine);
                 // create balls
                 for (i = 0; i < numballs; i++) {;
                     let newBall = document.createElement('div');
                     newBall.classList.add('ball');
-                    console.log(numArray.length);
                     let pos = Math.floor(Math.random()*numArray.length);
                     let num = numArray[pos];
                     newBall.innerHTML = "";
@@ -58,14 +56,19 @@
                     numArray.splice(pos, 1); //remove used ball from array
                 }
                 // add edit button
-                // let editButton = document.createElement('p');
-                // editButton.innerHTML = "";
-                // editButton.textContent = "test";
-                // newline.appendChild(editButton);
+                let editButton = document.createElement('button');
+                editButton.innerHTML = "";
+                editButton.textContent = 'edit'
+                newLine.appendChild(editButton);
+                lines.appendChild(newLine);    
+                editButton.onclick = editLine();                            
             }
             function ballGen() {
                 let num = Math.floor(Math.random()*40);
                 return num;
+            }
+            function editLine() {
+                console.log("ping");
             }
         </script>
     </body>
