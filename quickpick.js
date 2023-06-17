@@ -25,12 +25,12 @@ function addline2() {
     }
     // add edit button
     let editButton = document.createElement('button');
-    editButton.innerHTML = "";
     editButton.textContent = 'edit'
     editButton.classList.add('t-edit');
+    editButton.addEventListener("click", editLine);
     newLine.appendChild(editButton);
     lines.appendChild(newLine);    
-    editButton.onclick = editLine();                            
+    
 }
 function ballGen() {
     let num = Math.floor(Math.random()*40);
