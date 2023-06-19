@@ -2,7 +2,7 @@ function test() {
     console.log('run');
 }
 function addline2() {
-    // generate array of available numbersß
+    // generate array of available numbers
     let numArray = [];
     for (i = 0; i < 40; i++) {
         numArray[i] = i+1;
@@ -38,4 +38,34 @@ function ballGen() {
 }
 function editLine() {
     console.log("ping");
+}
+
+// number picker here
+numberPicker();
+function numberPicker() {
+    console.log("number");
+    let selected = [];
+    //create window
+    let pickerWrap = document.createElement('section');
+    pickerWrap.classList.add("numPicker");
+    //add numberpicker to body
+    document.body.appendChild(pickerWrap);
+    //create selected num container
+    let lineWrap = document.createElement('div');
+    lineWrap.classList.add("numPicker-selected");
+    let pickLine = document.createElement('div');
+    pickLine.classList.add("line");
+    //create selector section
+    let selectWrap = document.createElement('div');
+    selectWrap.classList.add('numPicker-picker');
+    for (i=0; i < 40; i++) {
+        let ball = document.createElement('div');
+        ball.classList.add('ball');
+        ball.textContent = i+1;
+        selectWrap.appendChild(ball);
+    }
+    //append children elements
+    pickerWrap.appendChild(lineWrap);
+    lineWrap.appendChild(pickLine);  
+    pickerWrap.appendChild(selectWrap);
 }

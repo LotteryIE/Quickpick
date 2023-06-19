@@ -1,5 +1,5 @@
 body {
-    font-family: proxima-nova, sans-serif;ß
+    font-family: proxima-nova, sans-serif;
 }
 
 .line {
@@ -32,6 +32,34 @@ body {
 
 .ball.selected {
     background: #aaa;    
+}
+
+.numPicker {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+}
+
+.numPicker-selected {
+    width: 100%;
+    /* height: 5rem; */
+    background-color: #f2f2f2;
+    padding: 1rem, 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.numPicker-picker {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 1rem;    
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.25rem;
 }
 
 /* target classes */
